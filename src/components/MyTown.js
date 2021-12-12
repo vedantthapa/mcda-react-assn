@@ -12,7 +12,9 @@ class MyTown extends Component {
     this.state = {
       temperature: 0,
       temp: 0,
+      unit: "C",
     };
+
     this.fetchData = this.fetchData.bind(this);
     this.changeUnit = this.changeUnit.bind(this);
   }
@@ -68,7 +70,9 @@ class MyTown extends Component {
             </span>
             <br />
             <br />
-            <button onClick={this.changeUnit}>Change Temp Unit</button>
+            <button onClick={this.changeUnit}>
+              Change Temp to &deg;{this.state.unit === "C" ? "F" : "C"}
+            </button>
           </div>
         </div>
       </div>
